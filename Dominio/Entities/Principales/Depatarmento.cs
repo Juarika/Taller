@@ -2,8 +2,8 @@ namespace Dominio.Entities.Principales;
 
 public class Departamento : BaseEntity
 {
-    public string? Nombre { get; set; }
+    public string Nombre { get; set; }
     public int IdPaisFk { get; set; }
-    public Pais? Pais { get; set; }
-    public ICollection<Ciudad>? Ciudades { get; set; }
+    public Pais Pais { get; set; }
+    public ICollection<Ciudad> Ciudades { get; set; }
 }

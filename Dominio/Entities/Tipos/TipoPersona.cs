@@ -4,5 +4,5 @@ namespace Dominio.Entities.Tipos;
 
 public class TipoPersona : BaseEntityTipo
 {
-    public ICollection<Persona>? Personas { get; set; }
+    public ICollection<Persona> Personas { get; set; }
 }
