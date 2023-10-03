@@ -3,7 +3,7 @@ using AspNetCoreRateLimit;
 using Microsoft.EntityFrameworkCore;
 using Persistencia;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-
+using API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,14 +16,14 @@ builder.Services.AddControllers(options =>
 }).AddXmlSerializerFormatters();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-// builder.Services.ConfigureCors();
+builder.Services.ConfigureCors();
 builder.Services.AddSwaggerGen(c => 
 {
     c.ResolveConflictingActions( apiDescriptions => apiDescriptions.First()); 
 });
-// builder.Services.AddAplicacionServices();
+builder.Services.AddAplicacionServices();
 builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
-// builder.Services.ConfigureRateLimiting();
+builder.Services.ConfigureRateLimiting();
 // builder.Services.AddJwt(builder.Configuration);
 // builder.Services.ConfigureApiVersioning();
 
@@ -62,10 +62,10 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-// app.UseCors("CorsPolicy");
+app.UseCors("CorsPolicy");
 
 app.MapControllers();
 
 app.Run();
 
-// app.UseIpRateLimiting();
+app.UseIpRateLimiting();

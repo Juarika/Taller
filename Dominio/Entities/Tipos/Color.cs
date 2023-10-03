@@ -4,5 +4,5 @@ namespace Dominio.Entities.Tipos;
 
 public class Color : BaseEntityTipo
 {
-    public ICollection<Vehiculo> Vehiculo { get; set; }
+    public ICollection<Vehiculo> Vehiculos { get; set; }
 }

@@ -1,4 +1,4 @@
-using System.Drawing;
+using Dominio.Entities.Tipos;
 
 namespace Dominio.Entities.Principales;
 

@@ -1,16 +1,16 @@
 using System.Linq.Expressions;
-using Dominio.Entities.Principales;
+using Dominio.Entities.Tipos;
 using Dominio.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Persistencia;
 
 namespace Aplicacion.Repository;
 
-public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
+public class GenericTypeRepository<T> : IGenericTypeRepository<T> where T : BaseEntityTipo
 {
     private readonly TallerContext _context;
 
-    public GenericRepository(TallerContext context){
+    public GenericTypeRepository(TallerContext context){
         _context = context;
     }
     public virtual void Add(T entity)

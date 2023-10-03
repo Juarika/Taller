@@ -22,11 +22,11 @@ public class OrdenConfiguration : IEntityTypeConfiguration<Orden>
         .HasMaxLength(50);
 
         builder.HasOne(p => p.Cliente)
-        .WithMany(p => p.Ordenes)
+        .WithMany(p => p.ClienteOrdenes)
         .HasForeignKey(p => p.IdClienteFk);
 
         builder.HasOne(p => p.Manager)
-        .WithMany(p => p.Ordenes)
+        .WithMany(p => p.ManagerOrdenes)
         .HasForeignKey(p => p.IdManagerFk);
 
         builder.HasOne(p => p.Vehiculo)

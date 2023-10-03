@@ -16,7 +16,8 @@ public class Persona : BaseEntity
     public ICollection<Factura> Facturas { get; set; }
     public ICollection<Telefono> Telefonos { get; set; }
     public ICollection<Vehiculo> Vehiculos { get; set; }
-    public ICollection<Orden> Ordenes { get; set; }
+    public ICollection<Orden> ManagerOrdenes { get; set; }
+    public ICollection<Orden> ClienteOrdenes { get; set; }
     public ICollection<PersonaEspecialidad> PersonaEspecialidades { get; set; }
     public ICollection<Especialidad> Especialidades { get; set; } = new HashSet<Especialidad>();
 }
